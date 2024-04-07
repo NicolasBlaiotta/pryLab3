@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pryLab3", "pryLab3.csproj", "{0E532454-4C5B-467B-9370-172E4836A744}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E532454-4C5B-467B-9370-172E4836A744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E532454-4C5B-467B-9370-172E4836A744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E532454-4C5B-467B-9370-172E4836A744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E532454-4C5B-467B-9370-172E4836A744}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C9A29A6-E6F3-4A12-BA50-6E27B6BB593A}
+	EndGlobalSection
+EndGlobal
