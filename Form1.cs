@@ -13,17 +13,14 @@ namespace pryLab3
 {
     public partial class Form1 : Form
     {
-        private Point previousPoint;
+        private Point? previousPoint;
         private Pen pen;
         public Form1()
         {
             InitializeComponent();
             pen = new Pen(Color.Black, 2); // Color y grosor del trazo
             pictureBox1.BackColor = Color.White; // Color de fondo del PictureBox
-            pictureBox1.Paint += PictureBox1_Paint;
-            pictureBox1.MouseDown += PictureBox1_MouseDown;
-            pictureBox1.MouseMove += PictureBox1_MouseMove;
-            pictureBox1.MouseUp += PictureBox1_MouseUp;
+
         }
 
         private void PictureBox1_Paint(object sender, PaintEventArgs e)
@@ -34,12 +31,24 @@ namespace pryLab3
             }
         }
 
-        private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseDown_1(object sender, MouseEventArgs e)
         {
             previousPoint = e.Location;
         }
 
-        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void pictureBox1_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            previousPoint = null;
+        }
+
+        private void pictureBox1_MouseMove_1(object sender, MouseEventArgs e)
         {
             if (previousPoint != null && e.Button == MouseButtons.Left)
             {
@@ -51,12 +60,7 @@ namespace pryLab3
             }
         }
 
-        private void PictureBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            previousPoint = null;
-        }
-
-        private void BtnLimpiar_Click(object sender, EventArgs e)
+        private void BtnLimpiar_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Refresh(); // Limpia la firma
         }
