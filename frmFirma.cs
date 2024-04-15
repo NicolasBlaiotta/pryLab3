@@ -64,6 +64,13 @@ namespace pryLab3
         {
             pictureBox1.Refresh(); // Limpia la firma
         }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            frmNave formularioDestino = new frmNave();
+
+            formularioDestino.Show();
+        }
     }
 }
 
