@@ -63,6 +63,16 @@ namespace pryLab3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _360_F_500191857_Sf2wqZf892GA5rMuwokZNwEusCidtBWe {
+            get {
+                object obj = ResourceManager.GetObject("360_F_500191857_Sf2wqZf892GA5rMuwokZNwEusCidtBWe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bala {
             get {
                 object obj = ResourceManager.GetObject("bala", resourceCulture);

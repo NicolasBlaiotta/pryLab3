@@ -12,10 +12,10 @@ namespace pryLab3
 {
     public partial class frmNave : Form
     {
-        private const int velocidadNave = 5;
-        private const int velocidadEnemigo = 3;
+        private const int velocidadNave = 12;
+        private const int velocidadEnemigo = 5;
         private const int velocidadBala = 10;
-        private const int intervaloOleada = 4000;
+        private const int intervaloOleada = 20;
         private Random rnd = new Random();
         private PictureBox naveJugador;
         private Timer temporizadorJuego = new Timer();
@@ -41,14 +41,14 @@ namespace pryLab3
             temporizadorJuego.Tick += BucleJuego;
             temporizadorJuego.Start();
 
-            enemigos = new PictureBox[10];
+            enemigos = new PictureBox[1];
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 enemigos[i] = new PictureBox
                 {
                     Image = Properties.Resources.enemigo,
-                    Size = new Size(40, 40),
+                    Size = new Size(40, 20),
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Tag = "enemigo",
                     Location = new Point(i * 50, 10)
@@ -85,13 +85,14 @@ namespace pryLab3
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Tag = "bala",
                 Location = new Point(naveJugador.Left + naveJugador.Width / 2 - 2, naveJugador.Top - 20)
+
             };
             Controls.Add(bala);
         }
         private void BucleJuego(object sender, EventArgs e)
         {
             MoverEnemigos();
-            MoverBala();
+            Movimiento();
             ComprobarColisiones();
         }
 
@@ -103,17 +104,31 @@ namespace pryLab3
             }
         }
 
-        private void MoverBala()
-        {
-            if (bala != null)
-            {
-                bala.Top -= velocidadBala;
+        //private void MoverBala()
+        //{
+        //    if (bala != null)
+        //    {
+        //        bala.Top -= velocidadBala;
 
-                if (bala.Top < 0)
+        //        if (bala.Top < 0)
+        //        {
+        //            Controls.Remove(bala);
+        //            bala.Dispose();
+        //            bala = null;
+        //        }
+        //    }
+        //}
+        private void Movimiento()
+        {
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox && x.Tag =="bala")
                 {
-                    Controls.Remove(bala);
-                    bala.Dispose();
-                    bala = null;
+                    x.Top -= 10;
+                    if (x.Top<50)
+                    {
+                        this.Controls.Remove(x);
+                    }
                 }
             }
         }

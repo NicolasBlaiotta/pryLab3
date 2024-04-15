@@ -98,5 +98,11 @@
   <ItemGroup>
     <None Include="Resources\bala.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_500191857_Sf2wqZf892GA5rMuwokZNwEusCidtBWe.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -75,6 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::pryLab3.Properties.Resources._360_F_500191857_Sf2wqZf892GA5rMuwokZNwEusCidtBWe;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pctBala);
             this.Controls.Add(this.pctEnemigos);
