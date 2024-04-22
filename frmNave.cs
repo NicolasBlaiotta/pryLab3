@@ -12,19 +12,24 @@ namespace pryLab3
 {
     public partial class frmNave : Form
     {
-        private const int velocidadNave = 12;
+        private const int intervaloOleada = 5000; // Intervalo de tiempo entre oleadas (en milisegundos)
+        private const int velocidadNave = 17;
         private const int velocidadEnemigo = 5;
         private const int velocidadBala = 10;
-        private const int intervaloOleada = 20;
         private Random rnd = new Random();
         private PictureBox naveJugador;
         private Timer temporizadorJuego = new Timer();
         private PictureBox[] enemigos;
         private PictureBox bala;
+        public List<PictureBox> listadisparos = new List<PictureBox> ();
         public frmNave()
         {
             InitializeComponent();
             InicializarJuego();
+            // Configurar el Timer
+            timer1.Interval = intervaloOleada;
+            timer1.Tick += GenerarOleada; // Suscribirse al evento Tick
+            timer1.Start(); // Iniciar el temporizador para que comience a generar oleadas automáticamente
         }
         private void InicializarJuego()
         {
@@ -55,7 +60,6 @@ namespace pryLab3
                 };
                 Controls.Add(enemigos[i]);
             }
-
             KeyDown += Form1_KeyDown;
         }
 
@@ -88,6 +92,7 @@ namespace pryLab3
 
             };
             Controls.Add(bala);
+            listadisparos.Add(bala);
         }
         private void BucleJuego(object sender, EventArgs e)
         {
@@ -101,6 +106,13 @@ namespace pryLab3
             foreach (PictureBox enemigo in enemigos)
             {
                 enemigo.Top += velocidadEnemigo;
+                // Verificar si el enemigo llega al borde inferior
+                if (enemigo.Bottom >= this.ClientSize.Height)
+                {
+                    // Eliminar el enemigo si llega al borde inferior
+                    this.Controls.Remove(enemigo);
+                    enemigo.Dispose();
+                }
             }
         }
 
@@ -145,7 +157,7 @@ namespace pryLab3
                         Controls.Remove(bala);
                         bala.Dispose();
                         bala = null;
-                        return;
+                        //return;
                     }
                 }
             }
@@ -153,9 +165,9 @@ namespace pryLab3
         private void GenerarOleada(object sender, EventArgs e)
         {
             // Crear un array para almacenar los enemigos generados en esta oleada
-            PictureBox[] nuevasOleada = new PictureBox[5]; // Generar 5 nuevos enemigos en cada oleada
+            PictureBox[] nuevasOleada = new PictureBox[2]; // Generar 5 nuevos enemigos en cada oleada
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 2; i++)
             {
                 PictureBox enemigo = new PictureBox
                 {

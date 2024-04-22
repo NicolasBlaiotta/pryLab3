@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNave));
             this.pctBala = new System.Windows.Forms.PictureBox();
             this.pctEnemigos = new System.Windows.Forms.PictureBox();
             this.pctNave = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pctBala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEnemigos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctNave)).BeginInit();
@@ -71,6 +73,10 @@
             this.pctNave.Visible = false;
             this.pctNave.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            // 
             // frmNave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,5 +100,6 @@
         private System.Windows.Forms.PictureBox pctNave;
         private System.Windows.Forms.PictureBox pctEnemigos;
         private System.Windows.Forms.PictureBox pctBala;
+        private System.Windows.Forms.Timer timer1;
     }
 }
